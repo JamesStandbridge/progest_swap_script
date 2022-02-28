@@ -34,19 +34,22 @@ foreach($databases as $key => $database) {
 foreach($products as $product) {
     foreach($databases as $database) {
         $sql_product = $database['manager']->getProduct($product['code_article']);
-        $coldUpdate = !compareProductsCold($product, $sql_product);
-        $hotUpdate = false;
-
-        if($coldUpdate || $hotUpdate) {
-            dump($product);
-            $database['manager']->insertArticle($product, $coldUpdate, $hotUpdate);
+        if(!$sql_product) {
+            //insert
+            $database['manager']->insertArticle($product);
+        } else {
+            $coldUpdate = !compareProductsCold($product, $sql_product);
+            $hotUpdate = false;
+            
+            if($coldUpdate || $hotUpdate) {
+                //update
+                $database['manager']->updateArticle($product, $coldUpdate, $hotUpdate);
+            }
         }
     }
 }
 
-
-
-
+//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
 
 
 function compareProductsCold(array $p1, array $p2): bool

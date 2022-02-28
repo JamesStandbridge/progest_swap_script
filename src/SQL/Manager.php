@@ -8,9 +8,8 @@ use Simplon\Mysql\MysqlQueryIterator;
 
 
 
-class Manager {
-
-    const PRICE_ATTRIBUTE_ID = 75;
+class Manager 
+{
 
     public function __construct(string $host, string $user, string $password, string $database)
     {
@@ -26,7 +25,36 @@ class Manager {
         return $this->dbConn->query($sql)->fetch_array(MYSQLI_ASSOC);
     }
 
-    public function insertArticle(array $article, bool $updateCold, bool $updateHot)
+    public function updateArticle(array $article, bool $updateCold, bool $updateHot)
+    {
+        $q = null;
+        $q = $updateCold ? "update_cold='".(new \DateTime())->format('Y-m-d H:i:s')."'" : null;
+        if($updateHot) {
+            $q = $updateCold ? $q.", update_hot='".(new \DateTime())->format('Y-m-d H:i:s')."'" : "update_hot='".(new \DateTime())->format('Y-m-d H:i:s')."'";
+        }
+        $sql = sprintf(
+            "UPDATE progest_swap_product  SET nom='%s', description='%s', description_courte='%s', marque='%s', unite='%s', increment='%s', libelles='%s', sku='%s', poids='%s', status=%s, classe_tva='%s'%s WHERE code_article='%s'",
+            $article['nom'],
+            $article['description'],
+            $article['description_courte'],
+            $article['marque'],
+            $article['unite'],
+            $article['increment'],
+            $article['libelles'],
+            $article['sku'],
+            $article['poids'],
+            $article['status'],
+            $article['classe_tva'],
+            $q ? ",".$q : "",
+            $article['code_article']
+
+        );
+        dump($sql);
+        $res = $this->dbConn->query($sql);
+        return $res;
+    }
+
+    public function insertArticle(array $article)
     {
         $sql = sprintf(
             "INSERT INTO progest_swap_product VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %s, '%s', '%s', %s, %s, '%s', %s, %s, '%s', '%s', '%s', %s, %s, %s, %s, %s)",
@@ -53,8 +81,8 @@ class Manager {
             "null",
             "null",
             "null",
-            $updateCold ? "'".(new \DateTime())->format('Y-m-d H:i:s')."'" : "null",
-            $updateHot ? "'".(new \DateTime())->format('Y-m-d H:i:s')."'" : "null",
+            "'".(new \DateTime())->format('Y-m-d H:i:s')."'",
+            "'".(new \DateTime())->format('Y-m-d H:i:s')."'",
             "null",
             "null",
             "null"

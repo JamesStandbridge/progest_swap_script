@@ -25,15 +25,29 @@ class Manager
         return $this->dbConn->query($sql)->fetch_array(MYSQLI_ASSOC);
     }
 
-    public function updateArticle(array $article, bool $updateCold, bool $updateHot)
+    public function updateHotArticle(string $code_article, array $hot_content)
     {
-        $q = null;
-        $q = $updateCold ? "update_cold='".(new \DateTime())->format('Y-m-d H:i:s')."'" : null;
-        if($updateHot) {
-            $q = $updateCold ? $q.", update_hot='".(new \DateTime())->format('Y-m-d H:i:s')."'" : "update_hot='".(new \DateTime())->format('Y-m-d H:i:s')."'";
-        }
+        $q = "update_hot='".(new \DateTime())->format('Y-m-d H:i:s')."'";
+        dump($hot_content);
         $sql = sprintf(
-            "UPDATE progest_swap_product  SET nom='%s', description='%s', description_courte='%s', marque='%s', unite='%s', increment='%s', libelles='%s', sku='%s', poids='%s', status=%s, classe_tva='%s'%s WHERE code_article='%s'",
+            "UPDATE progest_swap_product SET prix='%s', quantite='%s'%s WHERE code_article='%s';",
+            $hot_content['pti'],
+            $hot_content['stock_qty'],
+            $q ? ",".$q : "",
+            $code_article
+
+        );
+
+        $res = $this->dbConn->query($sql);
+        return $res;
+    }
+
+    public function updateArticle(array $article)
+    {
+        $q = "update_cold='".(new \DateTime())->format('Y-m-d H:i:s')."'";
+
+        $sql = sprintf(
+            "UPDATE progest_swap_product  SET nom='%s', description='%s', description_courte='%s', marque='%s', unite='%s', increment='%s', libelles='%s', sku='%s', poids='%s', status=%s, classe_tva='%s'%s WHERE code_article='%s';",
             $article['nom'],
             $article['description'],
             $article['description_courte'],
@@ -49,7 +63,7 @@ class Manager
             $article['code_article']
 
         );
-        dump($sql);
+
         $res = $this->dbConn->query($sql);
         return $res;
     }
@@ -57,7 +71,7 @@ class Manager
     public function insertArticle(array $article)
     {
         $sql = sprintf(
-            "INSERT INTO progest_swap_product VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %s, '%s', '%s', %s, %s, '%s', %s, %s, '%s', '%s', '%s', %s, %s, %s, %s, %s)",
+            "INSERT INTO progest_swap_product VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %s, '%s', '%s', %s, %s, '%s', %s, %s, '%s', '%s', '%s', %s, %s, %s, %s, %s);",
             $article["code_article"],
             addslashes($article["nom"]),
             addslashes($article["description"]),
@@ -88,8 +102,6 @@ class Manager
             "null"
         );
         $res = $this->dbConn->query($sql);
-        
-        if(!$res) dump($sql);
 
         return $res;
     }

@@ -15,7 +15,31 @@ class Reader {
         $this->xmlIterator->rewind();
     }
 
-    public function getProducts()
+    public function applyHotContent(array $products, string $curr_store_code): array
+    {
+        while($this->xmlIterator->valid()) {
+            $xmlProduct = $this->xmlIterator->current();
+
+            $sku = $xmlProduct->attributes()->article->__toString();
+            $pti = $xmlProduct->children()->tarifVente->prixTTC->__toString();
+            $stock_qty = $xmlProduct->children()->reappro->stockDispo->__toString();
+            $store_code = $xmlProduct->attributes()->site->__toString();
+
+            if($store_code === $curr_store_code) {
+                $products[$sku]["hot_content"] = array(
+                    "pti" => $pti,
+                    "stock_qty" => $stock_qty,
+                    "store_code" => $store_code
+                );
+            }
+    
+            $this->xmlIterator->next();
+        }
+
+        return $products;
+    }
+
+    public function getProducts(): array
     {
         $products = [];
 
@@ -52,7 +76,7 @@ class Reader {
             $classe_tva = $this->determineTaxe($xmlProduct->children()->DG->taxes);
             $disponibilite_stock = $this->determineDisponibiliteStock($xmlProduct->children()->DG->fiche->objet);
 
-            $products[] = array(
+            $products[$code_article] = array(
                 "code_article" => $code_article,
                 "nom" => $nom,
                 "description" => $description,

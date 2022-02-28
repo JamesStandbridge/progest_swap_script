@@ -63,7 +63,7 @@ class Reader {
                 "libelles" => $libelles,
                 "sku" => $sku,
                 "poids" => $poids,
-                "status" => $status,
+                "status" => boolVal($status) ? 1 : 0,
                 "classe_tva" => $classe_tva,
                 "disponibilite_stock" => $disponibilite_stock
             );

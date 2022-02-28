@@ -1,0 +1,15 @@
+code_article        => article.uuid 
+nom                 => article/DG/fiche/libelle
+description         => article/DG/descriptions/description/description
+description_courte  => article/DG/fiche/libCaisse
+Marque              => article/DG/fiche/marque
+unite			    => article/DG/fiche/objet/caracteristique
+increment  	        => article/DG/fiche/objet/caracteristique
+libelles            => article/DG/descriptions/description/description
+distribution        => ?
+assurance           => ?
+sku                 => article/DG/GTIN/code
+poids               => article/DG/caracteristiques/poidsNet
+status              => article/DC/centrale/pilotagePV/eCommerce
+classe_tva          => article/DG/taxes/taxe
+disponibilite_stock => article/DG/fiche/objet/caracteristique

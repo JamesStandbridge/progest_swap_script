@@ -1,0 +1,23 @@
+{
+    "name": "boeki/pogest_swap_script",
+    "type": "project",
+    "require": {
+        "php": ">7.3",
+        "symfony/var-dumper": "5.4.x-dev"
+    },
+    "require-dev": {
+        "php": ">7.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Boeki\\PogestSwapScript\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "jamesstandbridge",
+            "email": "james.standbridge.git@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

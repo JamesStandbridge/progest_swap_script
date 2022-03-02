@@ -15,7 +15,7 @@ class Manager
     {
         $this->dbConn = new \mysqli($host, $user, $password, $database);
         if ($this->dbConn->connect_errno) {
-            echo "Échec lors de la connexion à MySQL : (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+            echo "Échec lors de la connexion à MySQL : (" . $this->dbConn->connect_errno . ") " . $this->dbConn->connect_error;
         }
     }
 
@@ -31,8 +31,8 @@ class Manager
         dump($hot_content);
         $sql = sprintf(
             "UPDATE progest_swap_product SET prix='%s', quantite='%s'%s WHERE code_article='%s';",
-            $hot_content['pti'],
-            $hot_content['stock_qty'],
+            $hot_content['prix'],
+            $hot_content['quantity'],
             $q ? ",".$q : "",
             $code_article
 

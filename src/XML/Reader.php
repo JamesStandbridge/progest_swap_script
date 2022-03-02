@@ -39,6 +39,33 @@ class Reader {
         return $products;
     }
 
+    public function getHotProducts(string $curr_store_code): array
+    {
+        $products = [];
+
+        while($this->xmlIterator->valid()) {
+            $xmlProduct = $this->xmlIterator->current();
+
+            $sku = $xmlProduct->attributes()->article->__toString();
+            $pti = $xmlProduct->children()->tarifVente->prixTTC->__toString();
+            $stock_qty = $xmlProduct->children()->reappro->stockDispo->__toString();
+            $store_code = $xmlProduct->attributes()->site->__toString();
+
+            if($store_code === $curr_store_code) {
+                $products[$sku] = array(
+                    "code_article" => $sku,
+                    "quantity" => $pti,
+                    "prix" => $stock_qty,
+                    "store_code" => $store_code
+                );
+            }
+    
+            $this->xmlIterator->next();
+        }
+
+        return $products;
+    }
+
     public function getProducts(): array
     {
         $products = [];

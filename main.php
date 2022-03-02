@@ -4,31 +4,56 @@
  * @author James Standbridge <james.standbridge.git@gmail.com>
  */
 
-// define("COLD_DIR", dirname(__DIR__, 2)."/progest/");
-// define("HOT_DIR", dirname(__DIR__, 2)."/progest/");
-define("COLD_DIR", __DIR__."/data/");
-define("HOT_DIR", __DIR__."/data/");
+define("EXPORT_DIR", __DIR__."/data/");
+define("LOCAL_HOT_FILENAME", "articles_hot.xml");
+define("LOCAL_COLD_FILENAME", "articles_cold.xml");
 
-define("COLD_FILE_NAME", "articles_JARCNT.xml");
-//define("HOT_FILE_NAME", "artstock.xml");
-define("HOT_FILE_NAME", "artstock_fullday_20220222_174546.xml");
+define("COLD_FILENAME", "articles_JARCNT");
+define("HOT_FLY_FILENAME", "artstock_fly");
+define("HOT_FULL_FILENAME", "artstock_fullday");
+
+define("REMOTE_DEPOSIT_DIR", "/PUT/prep_CLICK_COLLECT");
+
 
 require 'vendor/autoload.php';
 
 use Boeki\PogestSwapScript\XML\Reader;
 use Boeki\PogestSwapScript\SQL\Manager;
+use JamesStandbridge\SimpleSFTP\sftp\SimpleSFTP;
+
+$client = new SimpleSFTP("185.72.89.110", "sftpBoeki", "ngv1FZZE}Rl8tP4");
+$client->cd(REMOTE_DEPOSIT_DIR);
 
 $arg_store_code = $argv[1]; 
 $arg_database = $argv[2]; 
+$script_type = $argv[3]; 
 
-$cold_content = file_get_contents(COLD_DIR.COLD_FILE_NAME);
-$hot_content = file_get_contents(HOT_DIR.HOT_FILE_NAME);
+if($script_type === "COLD") {
+    $filename = $client->get_last_file(EXPORT_DIR.LOCAL_COLD_FILENAME, COLD_FILENAME, STR_START_WITH);
+    $content = file_get_contents(EXPORT_DIR.LOCAL_COLD_FILENAME);
+} else if($script_type === "HOT_FLY") {
+    $filename = $client->get_last_file(EXPORT_DIR.LOCAL_HOT_FILENAME, HOT_FLY_FILENAME, STR_START_WITH);
+    $content = file_get_contents(EXPORT_DIR.LOCAL_HOT_FILENAME);
+} else if($script_type === "HOT_FULL") {
+    $filename = $client->get_last_file(EXPORT_DIR.LOCAL_HOT_FILENAME, HOT_FULL_FILENAME, STR_START_WITH);
+    $content = file_get_contents(EXPORT_DIR.LOCAL_HOT_FILENAME);
+} else {
+    throw new \LogicException("Script type must be in HOT_FLY, HOT_FULL or COLD");
+}
 
-$xml = new Reader($cold_content);
-$products = $xml->getProducts();
+//no new file, exit program
+if($filename === false) {
+    exit();
+}
 
-$xml = new Reader($hot_content);
-$products = $xml->applyHotContent($products, $arg_store_code);
+
+$xml = new Reader($content);
+
+if($script_type === "COLD") {
+    $products = $xml->getProducts();
+} else {
+    $products = $xml->getHotProducts($arg_store_code);
+}
 
 $sql_manager = new Manager(
     "localhost", 
@@ -41,28 +66,48 @@ foreach($products as $product) {
     $sql_product = $sql_manager->getProduct($product['code_article']);
     if(!$sql_product) {
         //insert
-        if($product['status'] === 1) { //only if web true
+        if($script_type === "COLD" && $product['status'] === 1) { //only if web true && cold script
             $sql_manager->insertArticle($product);
         }
     } else {
-        $coldUpdate = !compareProductsCold($product, $sql_product);
-        //update cold
-        if($coldUpdate) { //only ondatachange
-            $sql_manager->updateColdArticle($product);
-        }
-    }
-    if(isset($product["hot_content"])) {
-        dump($product["hot_content"]);
-        $hotUpdate = $sql_product ? !compareProductHot($product["hot_content"], $sql_product) : true;
-
-        //update hot
-        if($hotUpdate) { //only ondatachange
-            $sql_manager->updateHotArticle($product["code_article"], $product["hot_content"]);
+        if($script_type === "COLD") {
+            $coldUpdate = !compareProductsCold($product, $sql_product);
+            //update cold
+            if($coldUpdate) { //only ondatachange
+                $sql_manager->updateColdArticle($product);
+            }
+        } else {
+            $hotUpdate = !compareProductHot($product, $sql_product);
+            if($hotUpdate) { //only ondatachange
+                $sql_manager->updateHotArticle($product["code_article"], $product);
+            }
         }
     }
 }
 
-//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
+/** ARCHIVE HANDLER */
+if($script_type === "COLD") {
+    $client->rename($filename, "archive/$filename");
+} else if ($script_type === "HOT_FULL") {
+    $files = $client->ls(true);
+    foreach($files as $file) {
+        if(substr_compare($file, "artstock_fly", 0, strlen("artstock_fly")) === 0) {
+            $client->rename($file, "archive/$file");
+        }
+    }
+} else if ($script_type === "HOT_FLY") {
+    $files = $client->ls(true);
+    foreach($files as $file) {
+        if(substr_compare($file, "artstock_fullday", 0, strlen("artstock_fullday")) === 0) {
+            $client->rename($file, "archive/$file");
+        }
+    }
+}
+
+$client->handle_archive("archive", null, 189);
+
+
+
 
 function compareProductHot(array $p1, array $p2): bool
 {
@@ -87,3 +132,9 @@ function compareProductsCold(array $p1, array $p2): bool
     }
     return true;
 }
+
+
+
+
+
+//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

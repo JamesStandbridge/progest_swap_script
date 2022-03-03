@@ -83,8 +83,19 @@ class Reader {
             $description_courte = $xmlProduct->children()->DG->fiche->libCaisse;
             $description_courte = $description_courte ? $description_courte->__toString() : null;
 
-            $marque = $xmlProduct->children()->DG->fiche->marque->attributes()->code;
+            $marque_code = $xmlProduct->children()->DG->fiche->marque->attributes()->code;
+            $marque = $xmlProduct->children()->DG->fiche->marque;
+
             $marque = $marque ? $marque->__toString() : null;
+            $marque_code = $marque_code ? $marque_code->__toString() : null;
+
+            if($marque_code !== "0000") {
+                //conversion en camelcase avec conservation des espaces pour coller
+                //avec le format des marques du magento de bio
+                $marque = ucwords(strtolower($marque), " \t\r\n\f\v'");
+            } else {
+                $marque = null;
+            }
 
             $unite = $this->determineUnite($xmlProduct->children()->DG->fiche->objet);
             

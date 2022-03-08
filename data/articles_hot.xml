@@ -1,4 +1,1031 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Généré par ProGest/SXS 1.04.00 le 02/03/22 13:55:01 -->
+<!-- Généré par ProGest/SXS 1.04.00 le 03/03/22 03:30:01 -->
 <sxs:artSites xmlns:sxs="http://www.spiralnet.net/ns/sxs">
+  <artSite origine="pgv5" article="2006508" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>3.3200</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="121925" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>2.7667</prix>
+      <prixTTC>3.3200</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>7.0000</stock>
+      <stockDispo>7.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2006517" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>3.1900</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="121925" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>3.0237</prix>
+      <prixTTC>3.1900</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>132.0000</stock>
+      <stockDispo>132.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2006518" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>3.9900</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="121925" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>3.7820</prix>
+      <prixTTC>3.9900</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>37.0000</stock>
+      <stockDispo>37.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2006520" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>6.3900</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="121925" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>6.0569</prix>
+      <prixTTC>6.3900</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>12.0000</stock>
+      <stockDispo>12.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2006526" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>3.4900</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="121925" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>3.3081</prix>
+      <prixTTC>3.4900</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>8.0000</stock>
+      <stockDispo>8.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2006528" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>4.0500</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="121925" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>3.8389</prix>
+      <prixTTC>4.0500</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>6.0000</stock>
+      <stockDispo>6.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2006537" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>5.5900</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="121925" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>5.2986</prix>
+      <prixTTC>5.5900</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>3.0000</stock>
+      <stockDispo>3.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2006550" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>false</PVbloque>
+      <prixTTC>4.9900</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="121925" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>4.7299</prix>
+      <prixTTC>4.9900</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>47.0000</stock>
+      <stockDispo>47.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2006551" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>3.6500</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="121925" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>3.4597</prix>
+      <prixTTC>3.6500</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>5.0000</stock>
+      <stockDispo>5.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2007073" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>17.2000</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="121925" condt="KGM">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="KGM">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>16.3033</prix>
+      <prixTTC>17.2000</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>KGM</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>7.8150</stock>
+      <stockDispo>7.8150</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2016505" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>2.0500</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="122062" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>1.9431</prix>
+      <prixTTC>2.0500</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>3.0000</stock>
+      <stockDispo>3.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2016513" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>3.0900</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="122062" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>2.9289</prix>
+      <prixTTC>3.0900</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>1.0000</stock>
+      <stockDispo>1.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2016515" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>4.9900</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="122062" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>4.7299</prix>
+      <prixTTC>4.9900</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>9.0000</stock>
+      <stockDispo>9.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2036540" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>8.8200</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="121925" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>8.3602</prix>
+      <prixTTC>8.8200</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>41.0000</stock>
+      <stockDispo>41.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2036559" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>7.1500</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="121925" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>6.7773</prix>
+      <prixTTC>7.1500</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>8.0000</stock>
+      <stockDispo>8.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2050490" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>4.5900</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="121925" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="pce">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>4.3507</prix>
+      <prixTTC>4.5900</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>pce</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>50.0000</stock>
+      <stockDispo>50.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2051992" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>3.8400</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>3.6398</prix>
+      <prixTTC>3.8400</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>8.0000</stock>
+      <stockDispo>8.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2051993" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>3.3200</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>2.7667</prix>
+      <prixTTC>3.3200</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>8.0000</stock>
+      <stockDispo>8.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2051994" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>3.3200</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>2.7667</prix>
+      <prixTTC>3.3200</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>0.0000</stock>
+      <stockDispo>0.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2052002" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>5.3900</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>5.1090</prix>
+      <prixTTC>5.3900</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>11.0000</stock>
+      <stockDispo>11.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2052009" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>4.8500</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>4.5972</prix>
+      <prixTTC>4.8500</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>11.0000</stock>
+      <stockDispo>11.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2052010" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>4.1500</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>3.9336</prix>
+      <prixTTC>4.1500</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>2.0000</stock>
+      <stockDispo>2.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2052026" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>5.1500</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>4.8815</prix>
+      <prixTTC>5.1500</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>6.0000</stock>
+      <stockDispo>6.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
+  <artSite origine="pgv5" article="2052032" site="BIO302">
+    <pilotage>
+      <stockPV>true</stockPV>
+      <ventePV>true</ventePV>
+      <PVbloque>true</PVbloque>
+      <prixTTC>18.5400</prixTTC>
+      <offrable>true</offrable>
+      <nonSoldable>true</nonSoldable>
+      <prixSpecifique>true</prixSpecifique>
+      <prixQuantitatifs>false</prixQuantitatifs>
+      <etiquette>TEC3</etiquette>
+      <tracabilite>SNS</tracabilite>
+      <typeRef>PERM</typeRef>
+      <PVimpose>false</PVimpose>
+      <eCommerce>true</eCommerce>
+      <contremarque statut="true">
+        <maxiAutorise>0</maxiAutorise>
+      </contremarque>
+      <garantie statut="false">
+      </garantie>
+    </pilotage>
+    <refAchatSite origine="pgv5" fournisseur="122340" condt="PCE">
+      <refPDV>true</refPDV>
+    </refAchatSite>
+    <tarifVente>
+      <prix>17.5735</prix>
+      <prixTTC>18.5400</prixTTC>
+    </tarifVente>
+    <cycleAchat type="FDIR">
+      <cdtStockage>PCE</cdtStockage>
+      <fournisseur origine="pgv5">122340</fournisseur>
+      <condAchat>PCE</condAchat>
+    </cycleAchat>
+    <reappro flux="true">
+      <regle>MANU</regle>
+      <stock>4.0000</stock>
+      <stockDispo>4.0000</stockDispo>
+    </reappro>
+    <merchandising>
+    </merchandising>
+  </artSite>
 </sxs:artSites>

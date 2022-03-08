@@ -28,17 +28,20 @@ class Manager
     public function updateHotArticle(string $code_article, array $hot_content)
     {
         $q = "update_hot='".(new \DateTime())->format('Y-m-d H:i:s')."'";
-        dump($hot_content);
         $sql = sprintf(
-            "UPDATE progest_swap_product SET prix='%s', quantite='%s'%s WHERE code_article='%s';",
+            "UPDATE progest_swap_product SET prix='%s', quantite='%s', origine='%s', calibre='%s', categorie='%s'%s  WHERE code_article='%s';",
             $hot_content['prix'],
-            $hot_content['quantity'],
+            $hot_content['quantite'],
+            $hot_content['origine'],
+            $hot_content['calibre'],
+            $hot_content['categorie'],
             $q ? ",".$q : "",
             $code_article
 
         );
 
         $res = $this->dbConn->query($sql);
+
         return $res;
     }
 
@@ -71,7 +74,7 @@ class Manager
     public function insertArticle(array $article)
     {
         $sql = sprintf(
-            "INSERT INTO progest_swap_product VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', %s, '%s', '%s', %s, %s, '%s', %s, %s, '%s', '%s', '%s', %s, %s, %s, %s, %s);",
+            "INSERT INTO progest_swap_product (code_article, nom, description, description_courte, marque, unite, increment, libelles, sku, poids,status,classe_tva,disponibilite_stock,ligne_ajoutee_le,update_cold) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',%s,'%s',%s,%s,%s);",
             $article["code_article"],
             addslashes($article["nom"]),
             addslashes($article["description"]),
@@ -80,29 +83,15 @@ class Manager
             $article["unite"],
             $article["increment"],
             addslashes($article["libelles"]),
-            null,
-            null,
             $article["sku"],
             $article["poids"],
             $article["status"] ? 1 : 0,
-            null,
-            null,
-            "null",
-            "null",
             $article["classe_tva"],
-            "null",
             $article["disponibilite_stock"] ? 1 : 0,
-            null,
-            null,
-            null,
             "'".(new \DateTime())->format('Y-m-d H:i:s')."'",
-            "'".(new \DateTime())->format('Y-m-d H:i:s')."'",
-            "null",
-            "null",
-            "null"
+            "'".(new \DateTime())->format('Y-m-d H:i:s')."'"
         );
         $res = $this->dbConn->query($sql);
-
         return $res;
     }
 }

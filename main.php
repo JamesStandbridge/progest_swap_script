@@ -24,6 +24,9 @@ use JamesStandbridge\SimpleSFTP\sftp\SimpleSFTP;
 $client = new SimpleSFTP("185.72.89.110", "sftpBoeki", "ngv1FZZE}Rl8tP4");
 $client->cd(REMOTE_DEPOSIT_DIR);
 
+// $client->rename("archive/articles_JARCNT.xml_2022-03-04 03:29:20", "articles_JARCNT.xml");
+// dd("fin");
+
 $arg_store_code = $argv[1]; 
 $arg_database = $argv[2]; 
 $script_type = $argv[3]; 
@@ -37,6 +40,9 @@ if($script_type === "COLD") {
 } else if($script_type === "HOT_FULL") {
     $filename = $client->get_last_file(EXPORT_DIR.LOCAL_HOT_FILENAME, HOT_FULL_FILENAME, STR_START_WITH);
     $content = file_get_contents(EXPORT_DIR.LOCAL_HOT_FILENAME);
+} else if($script_type === "HOT_INIT") {
+    $content = file_get_contents(EXPORT_DIR."artstock_hot_init.xml");
+    $filename = true;
 } else {
     throw new \LogicException("Script type must be in HOT_FLY, HOT_FULL or COLD");
 }
@@ -45,7 +51,6 @@ if($script_type === "COLD") {
 if($filename === false) {
     exit();
 }
-
 
 $xml = new Reader($content);
 
@@ -62,6 +67,7 @@ $sql_manager = new Manager(
     $arg_database
 );
 
+
 foreach($products as $product) {
     $sql_product = $sql_manager->getProduct($product['code_article']);
     if(!$sql_product) {
@@ -74,7 +80,7 @@ foreach($products as $product) {
             $coldUpdate = !compareProductsCold($product, $sql_product);
             //update cold
             if($coldUpdate) { //only ondatachange
-                $sql_manager->updateColdArticle($product);
+                $sql_manager->updateArticle($product);
             }
         } else {
             $hotUpdate = !compareProductHot($product, $sql_product);
@@ -85,21 +91,33 @@ foreach($products as $product) {
     }
 }
 
+
+
 /** ARCHIVE HANDLER */
 if($script_type === "COLD") {
-    $client->rename($filename, "archive/$filename");
+    $new_filename = sprintf("archive/%s_%s",$filename,(new \DateTime())->format("Y-m-d h:s:i"));
+    $client->rename($filename, $new_filename);
+    if(!$result) {
+        $client->rm($filename);
+    }
 } else if ($script_type === "HOT_FULL") {
     $files = $client->ls(true);
     foreach($files as $file) {
         if(substr_compare($file, "artstock_fly", 0, strlen("artstock_fly")) === 0) {
-            $client->rename($file, "archive/$file");
+            $result = $client->rename($file, "archive/$file");
+            if(!$result) {
+                $client->rm($file);
+            }
         }
     }
 } else if ($script_type === "HOT_FLY") {
     $files = $client->ls(true);
     foreach($files as $file) {
         if(substr_compare($file, "artstock_fullday", 0, strlen("artstock_fullday")) === 0) {
-            $client->rename($file, "archive/$file");
+            $result = $client->rename($file, "archive/$file");
+            if(!$result) {
+                $client->rm($file);
+            }
         }
     }
 }
@@ -107,12 +125,9 @@ if($script_type === "COLD") {
 $client->handle_archive("archive", null, 189);
 
 
-
-
 function compareProductHot(array $p1, array $p2): bool
 {
-    $columns = ["prix", "quantite"];
-
+    $columns = ["prix", "quantite", "origine", "categorie", "calibre"];
     foreach($columns as $column) {
         if($p1[$column] != $p2[$column]) {
             return false;
@@ -123,8 +138,8 @@ function compareProductHot(array $p1, array $p2): bool
 
 function compareProductsCold(array $p1, array $p2): bool
 {
-    $columns = ["code_article", "nom", "description", "description_courte", "marque", "unite", "increment", "libelles", "sku", "poids", "status", "classe_tva"];
-
+    $columns = ["nom", "description", "description_courte", "marque", "unite", "increment", "libelles", "sku", "poids", "status", "classe_tva"];
+    
     foreach($columns as $column) {
         if($p1[$column] != $p2[$column]) {
             return false;
@@ -132,9 +147,6 @@ function compareProductsCold(array $p1, array $p2): bool
     }
     return true;
 }
-
-
-
 
 
 //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

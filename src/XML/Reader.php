@@ -25,11 +25,25 @@ class Reader {
             $stock_qty = $xmlProduct->children()->reappro->stockDispo->__toString();
             $store_code = $xmlProduct->attributes()->site->__toString();
 
+
+            $origine = $xmlProduct->children()->producteur;
+            $origine = $origine ? $origine->__toString() : null;
+
+            $categorie = $xmlProduct->children()->categorie;
+            $categorie = $categorie ? $categorie->__toString() : null;
+            
+            $calibre = $xmlProduct->attributes()->calibre;
+            $calibre = $calibre ? $calibre->__toString() : null;
+            
+
             if($store_code === $curr_store_code) {
                 $products[$sku]["hot_content"] = array(
                     "pti" => $pti,
                     "stock_qty" => $stock_qty,
-                    "store_code" => $store_code
+                    "store_code" => $store_code,
+                    "origine" => $origine,
+                    "categorie" => $categorie,
+                    "calibre" => $calibre
                 );
             }
     
@@ -51,12 +65,24 @@ class Reader {
             $stock_qty = $xmlProduct->children()->reappro->stockDispo->__toString();
             $store_code = $xmlProduct->attributes()->site->__toString();
 
+            $origine = $xmlProduct->children()->pilotage->producteur;
+            $origine = $origine ? $origine->__toString() : null;
+
+            $categorie = $xmlProduct->children()->pilotage->categorie;
+            $categorie = $categorie ? $categorie->__toString() : null;
+            
+            $calibre = $xmlProduct->children()->pilotage->calibre;
+            $calibre = $calibre ? $calibre->__toString() : null;
+
             if($store_code === $curr_store_code) {
                 $products[$sku] = array(
                     "code_article" => $sku,
-                    "quantity" => $pti,
-                    "prix" => $stock_qty,
-                    "store_code" => $store_code
+                    "quantite" => $stock_qty,
+                    "prix" => $pti,
+                    "store_code" => $store_code,
+                    "origine" => $origine,
+                    "categorie" => $categorie,
+                    "calibre" => $calibre
                 );
             }
     

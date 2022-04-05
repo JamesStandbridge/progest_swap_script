@@ -24,7 +24,7 @@ use JamesStandbridge\SimpleSFTP\sftp\SimpleSFTP;
 $client = new SimpleSFTP("185.72.89.110", "sftpBoeki", "ngv1FZZE}Rl8tP4");
 $client->cd(REMOTE_DEPOSIT_DIR);
 
-// $client->rename("archive/articles_JARCNT.xml_2022-03-04 03:29:20", "articles_JARCNT.xml");
+// $client->rename("archive/articles_JARCNT_2022-03-09 05:03:00.xml", "articles_JARCNT.xml");
 // dd("fin");
 
 $arg_store_code = $argv[1]; 
@@ -49,7 +49,7 @@ if($script_type === "COLD") {
 
 //no new file, exit program
 if($filename === false) {
-    exit();
+    goto end;
 }
 
 $xml = new Reader($content);
@@ -91,20 +91,20 @@ foreach($products as $product) {
     }
 }
 
-
+end:
 
 /** ARCHIVE HANDLER */
-if($script_type === "COLD") {
-    $new_filename = sprintf("archive/%s_%s",$filename,(new \DateTime())->format("Y-m-d h:s:i"));
-    $client->rename($filename, $new_filename);
-    if(!$result) {
-        $client->rm($filename);
-    }
-} else if ($script_type === "HOT_FULL") {
+if ($script_type === "HOT_FULL") {
     $files = $client->ls(true);
     foreach($files as $file) {
         if(substr_compare($file, "artstock_fly", 0, strlen("artstock_fly")) === 0) {
             $result = $client->rename($file, "archive/$file");
+            if(!$result) {
+                $client->rm($file);
+            }
+        } else if(substr_compare($file, "articles_JARCNT", 0, strlen("articles_JARCNT")) === 0) {
+            $new_filename = sprintf("archive/%s_%s.xml","articles_JARCNT",(new \DateTime())->format("Y-m-d_h:s:i"));
+            $client->rename($file, $new_filename);
             if(!$result) {
                 $client->rm($file);
             }
@@ -122,7 +122,9 @@ if($script_type === "COLD") {
     }
 }
 
-$client->handle_archive("archive", null, 189);
+
+//keep 100 last files in archive
+$client->handle_archive("archive", null, 100);
 
 
 function compareProductHot(array $p1, array $p2): bool

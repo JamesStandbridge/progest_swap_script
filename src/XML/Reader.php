@@ -140,6 +140,12 @@ class Reader {
             $classe_tva = $this->determineTaxe($xmlProduct->children()->DG->taxes);
             $disponibilite_stock = $this->determineDisponibiliteStock($xmlProduct->children()->DG->fiche->objet);
 
+            $progest_arbo = $xmlProduct->children()->DG->fiche->arbo1;
+            $progest_arbo = $progest_arbo ? $progest_arbo->__toString() : null;
+
+            $bio_arbo = $xmlProduct->children()->DG->fiche->arbo2;
+            $bio_arbo = $bio_arbo ? $bio_arbo->__toString() : null;
+
             $products[$code_article] = array(
                 "code_article" => $code_article,
                 "nom" => $nom,
@@ -153,7 +159,9 @@ class Reader {
                 "poids" => $poids,
                 "status" => boolVal($status) ? 1 : 0,
                 "classe_tva" => $classe_tva,
-                "disponibilite_stock" => $disponibilite_stock
+                "disponibilite_stock" => $disponibilite_stock,
+                "progest_arbo" => $progest_arbo,
+                "bio_arbo" => $bio_arbo
             );
     
             $this->xmlIterator->next();

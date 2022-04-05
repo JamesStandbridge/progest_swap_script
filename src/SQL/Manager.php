@@ -74,7 +74,7 @@ class Manager
     public function insertArticle(array $article)
     {
         $sql = sprintf(
-            "INSERT INTO progest_swap_product (code_article, nom, description, description_courte, marque, unite, increment, libelles, sku, poids,status,classe_tva,disponibilite_stock,ligne_ajoutee_le,update_cold) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',%s,'%s',%s,%s,%s);",
+            "INSERT INTO progest_swap_product (code_article, nom, description, description_courte, marque, unite, increment, libelles, sku, poids,status,classe_tva,disponibilite_stock,bio_arbo,progest_arbo,ligne_ajoutee_le,update_cold) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',%s,'%s',%s,'%s','%s',%s,%s);",
             $article["code_article"],
             addslashes($article["nom"]),
             addslashes($article["description"]),
@@ -88,6 +88,8 @@ class Manager
             $article["status"] ? 1 : 0,
             $article["classe_tva"],
             $article["disponibilite_stock"] ? 1 : 0,
+            $article["bio_arbo"],
+            $article["progest_arbo"],
             "'".(new \DateTime())->format('Y-m-d H:i:s')."'",
             "'".(new \DateTime())->format('Y-m-d H:i:s')."'"
         );
